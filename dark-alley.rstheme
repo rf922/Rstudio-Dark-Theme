@@ -1,0 +1,2133 @@
+/* rs-theme-name: dark alley */
+/* rs-theme-is-dark: TRUE */
+
+:root {
+  /* editor */
+  --editor-background-color: 0, 0, 0; /* Pure black */
+  --editor-background: rgb(var(--editor-background-color));
+  --editor-foreground: rgb(220, 220, 220); /* Slightly lighter gray for good contrast*/
+
+  --separator: rgb(30, 30, 30); /* Very dark gray*/
+  --toolbar: rgb(15, 15, 15);  /* Darker Toolbar */
+  --tab: rgb(20, 20, 20);   /* Slightly lighter than toolbar*/
+  --selected-tab: var(--editor-background); /* Stays black */
+
+  /* syntax */
+  --type-declaration: #7fffd4;  /* Aqua / Bright Teal */
+  --language-constant: #ff4500; /* Orange Red*/
+  --numeric-constant: #ff4500; /* Orange Red */
+  --string: #90ee90;      /* Light Green */
+  --regex: #ff69b4;  /* Hot Pink */
+  --keyword: #dda0dd;   /* Plum/Thistle */
+  --function-declaration: #6495ed; /* Cornflower Blue */
+  --variable: #ffffff;    /* Pure white, stands out well */
+  --comment: #555555;   /* Darker, low contrast */
+  --operator: #ee82ee;   /* Violet */
+
+  /* markdown */
+  --heading: var(--language-constant); /* Orange-red */
+  --inline-code: var(--string);  /* Light green */
+}
+
+.ace_gutter {
+  color: rgb(100, 100, 100); /* Slightly darker gray */
+}
+
+.ace_print-margin {
+  width: 2px;
+  box-shadow: 1px 0 0 0 rgb(70, 70, 70) inset; /* Darker shadow */
+}
+
+.ace_editor,
+.rstudio-themes-flat.ace_editor_theme .profvis-flamegraph,
+.rstudio-themes-flat.ace_editor_theme,
+.rstudio-themes-flat .ace_editor_theme {
+  background-color: var(--editor-background);
+  color: var(--editor-foreground);
+  line-height: 1.3 !important;
+}
+
+.ace_cursor {
+  border-color: rgb(190, 190, 190); /* Lighter, visible cursor */
+  width: 2px;
+}
+
+.ace_marker-layer .ace_selection {
+  background-color: #202020; /* Even darker selection highlight */
+}
+
+.ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #101010; /*Darker shadow*/
+  border-radius: 2px;
+}
+
+.ace_marker-layer .ace_step {
+  background: rgb(110, 90, 0); /* Slightly brighter step marker*/
+}
+
+.ace_marker-layer .ace_bracket {
+  outline: 1px solid rgb(120, 120, 120); /* Darker bracket color*/
+  background-color: rgba(0, 100, 0, 0.1); /*Kept from original*/
+}
+
+.ace_marker-layer .ace_active-line {
+  outline: 2px solid rgb(30, 30, 30); /* Darker active line color*/
+}
+
+.ace_gutter-active-line {
+  background-color: rgb(170, 170, 170); /* Slightly Lighter */
+}
+
+.ace_marker-layer .ace_selected-word {
+  background-color: rgba(234, 92, 0, 0.50); /*Slightly more opaque*/
+}
+
+.ace_invisible {
+  color: rgba(227, 228, 226, 0.1); /*Darker, less visible*/
+}
+
+.ace_keyword:not(.ace_operator),
+.ace_meta,
+.ace_storage,
+.ace_storage.ace_type,
+.ace_support.ace_type {
+  color: var(--keyword);
+}
+
+.ace_keyword.ace_operator {
+  color: var(--operator);
+}
+
+.ace_constant.ace_character,
+.ace_keyword.ace_other.ace_unit,
+.ace_support.ace_constant,
+.ace_variable.ace_parameter {
+  color: var(--language-constant);
+}
+
+.ace_constant.ace_language,
+.ace_keyword.ace_virtual-comment {
+  color: var(--language-constant);
+}
+
+.ace_constant.ace_numeric,
+.ace_constant.ace_other {
+  color: var(--numeric-constant);
+}
+
+.ace_invalid {
+  color: #101010; /*almost black*/
+  background-color: #ff4500; /*Orange-red*/
+}
+
+.ace_invalid.ace_deprecated {
+  color: #101010; /*almost black*/
+  background-color: #dda0dd; /*Plum/Thistle*/
+}
+
+.ace_gutter-cell:not([style*="top"]) {
+  position: relative;
+}
+
+.ace_line .ace_fold {
+  background: none;
+  height: inherit;
+  margin: 0;
+  border: none;
+  position: relative;
+}
+
+.ace_line .ace_fold::before {
+  color: grey;
+  content: "⋯";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ace_gutter .ace_fold-widget {
+  cursor: pointer;
+  background: no-repeat border-box transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: 17px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.ace_gutter .ace_fold-widget.ace_closed {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath opacity='.1' fill='%23fff' d='M3 3h9v9H3z'/%3E%3Cpath d='M11 4v7H4V4h7m1-1H3v9h9V3z' fill='%235a5a5a'/%3E%3Cpath fill='none' stroke='%23c5c5c5' stroke-miterlimit='10' d='M10 7.5H5M7.5 5v5'/%3E%3C/svg%3E");
+}
+
+.ace_gutter .ace_fold-widget.ace_open {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath d='M11 4v7H4V4h7m1-1H3v9h9V3z' fill='%235a5a5a'/%3E%3Cpath fill='none' stroke='%23c5c5c5' stroke-miterlimit='10' d='M10 7.5H5'/%3E%3C/svg%3E");
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.ace_gutter:hover .ace_fold-widget.ace_open {
+  opacity: 1;
+}
+
+.ace_entity.ace_name.ace_function,
+.ace_identifier.ace_support.ace_function:not(.ace_virtual-comment) {
+  color: var(--function-declaration);
+}
+
+.ace_identifier,
+.ace_variable {
+  color: var(--variable);
+}
+
+.ace_support.ace_class,
+.ace_support.ace_type {
+  color: var(--type-declaration);
+}
+
+.ace_heading,
+.ace_markup.ace_heading {
+  color: var(--heading);
+}
+
+.ace_markup.ace_heading .ace_entity.ace_name.ace_tag,
+.ace_entity.ace_other.ace_attribute-name,
+.ace_meta.ace_tag,
+.ace_string {
+  color: var(--string);
+}
+
+.ace_string.ace_regexp {
+  color: var(--regex);
+}
+
+/* Comments */
+.ace_comment {
+  color: #666666; /* Dark gray */
+}
+
+/* Rmarkdown code */
+[class="ace_support ace_function"] {
+    color: #00FF7F; /* Neon green */
+}
+
+/* Rmarkdown emphasis */
+.ace_constant.ace_language.ace_boolean.ace_text {
+  font-style: italic;
+    color: #00FFFF; /* Light Cyan */
+}
+
+/* Rmarkdown strong emphasis */
+.ace_constant.ace_numeric.ace_text {
+  font-weight: bold;
+  color: #FF00FF; /* Neon Magenta */
+}
+
+/* Indent guides */
+.ace_indent-guide {
+  box-shadow: 1px 0 0 0 #222222; /* Very dark gray */
+  display: inline-block;
+}
+
+/* nocolor text */
+.nocolor.ace_editor .ace_line span {
+  color: #cccccc !important; /* Light gray */
+}
+
+/* Foreign line background */
+.ace_marker-layer .ace_foreign_line {
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.04); /* Very subtle white for highlight */
+}
+
+/* Active debug line */
+.ace_marker-layer .ace_active_debug_line {
+  position: absolute;
+  width: 100% !important;
+  z-index: -1;
+  background-color: rgba(255, 255, 0, 0.3); /* Yellow with more intensity */
+}
+
+/* Find line background */
+.ace_marker-layer .ace_find_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #1a1a1a; /* Very dark gray */
+}
+
+/* Console error */
+.ace_console_error {
+  color: #ff4d4d; /* Bright red */
+  background-color: #1a1a1a; /* Very dark gray */
+}
+
+/* Console keyword */
+#rstudio_console_output .ace_keyword {
+    color: #33aaff; /* Bright Blue */
+}
+
+/* Console constant language */
+#rstudio_console_output .ace_constant.ace_language {
+  color: #ff4d4d; /* Bright red */
+}
+
+
+/* Links */
+.rstudio-themes-flat.editor_dark.ace_editor_theme a {
+  color: #00FFFF !important; /* Light cyan */
+}
+
+/* z-index layers (no changes needed) */
+.ace_layer {
+  z-index: 3;
+}
+
+.ace_layer.ace_print-margin-layer {
+  z-index: 2;
+}
+
+.ace_layer.ace_marker-layer {
+  z-index: 1;
+}
+
+/* Autocomplete */
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete {
+    background: #0a0a0a; /* almost black */
+  border: solid 1px #333333 !important; /* Dark gray border */
+  color: #e6e6e6; /* Light gray text */
+}
+
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {
+    background: rgba(100, 100, 100, 0.35); /* Darker gray */
+  border: none;
+}
+
+/* Positioning adjustments - No changes needed */
+.rstudio-themes-flat > .rstudio-themes-dark div:last-child[style*="top: 29px"] {
+  top: 24px !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+.rstudio-themes-flat > .rstudio-themes-dark div:last-child[style*="top: 5px"] {
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+.rstudio-themes-dark
+  :-webkit-any(div:last-child[style*="top: 5px"], div:last-child[style*="top: 29px"])
+  .gwt-SplitLayoutPanel-Workbench {
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+/* Background */
+.rstudio-themes-flat > .rstudio-themes-dark,
+.rstudio-themes-flat > .rstudio-themes-dark :-webkit-any(.gwt-TabLayoutPanel, .gwt-TabLayoutPanelContent) {
+  background: #000000 !important; /* Solid black */
+}
+
+/* Splitters */
+.rstudio-themes-flat > .rstudio-themes-dark .gwt-SplitLayoutPanel-HDragger {
+  background: #000000 !important; /* Solid black */
+  cursor: ew-resize;
+  border-color: #000000; /* Solid black */
+}
+
+.rstudio-themes-flat > .rstudio-themes-dark .gwt-SplitLayoutPanel-VDragger {
+  background: #000000 !important; /* Solid black */
+  cursor: ns-resize;
+  border-color: #000000; /* Solid black */
+}
+
+/* Window containers */
+.rstudio-themes-flat
+  > .rstudio-themes-dark
+  :-webkit-any(.windowframe, .rstheme_minimizedWindowObject)
+  > div:last-child {
+  border-radius: 0;
+  border: none !important;
+}
+
+/* Main toolbar */
+.rstudio-themes-dark > div:last-child > div > div > .rstheme_toolbarWrapper,
+.rstudio-themes-dark [role="application"] > div > .rstheme_toolbarWrapper {
+  background-color: #0a0a0a !important; /* Almost black toolbar */
+  border-color: #0a0a0a !important;
+}
+
+
+/* other toolbars */
+.rstudio-themes-dark .rstheme_toolbarWrapper,
+.rstudio-themes-dark .rstheme_secondaryToolbar {
+  background-color: #0a0a0a !important; /* almost black */
+  border-color: #0a0a0a !important; /* almost black */
+}
+
+/* other toolbars */
+.rstudio-themes-dark .rstudio-themes-background {
+  --color: #1a1a1a; /* Very dark gray */
+  background-color: var(--color) !important;
+  border-top-color: var(--color) !important;
+  border-bottom-color: var(--color) !important;
+  border-radius: 0;
+}
+
+/* Files breadcrumb */
+.rstudio-themes-dark .breadcrumb > div:last-child {
+  background: #0a0a0a !important; /* almost black */
+  left: inherit !important;
+}
+
+/* Tabs container */
+.rstudio-themes-dark .gwt-TabLayoutPanelTabs,
+/* Windows */
+.rstudio-themes-dark .windowframe,
+/* Remove gradients */
+.rstudio-themes-dark :-webkit-any(.rstheme_multiPodUtilityTabArea, .GD15MCFCCS, .GJQ3LUQCCS) {
+    background: #0a0a0a !important; /* Almost black */
+  border-color: #0a0a0a !important; /* Almost black */
+}
+
+
+/* Tabs */
+.rstudio-themes-dark .gwt-TabLayoutPanelTab:not(.gwt-TabLayoutPanelTab-selected) .rstheme_tabLayoutCenter,
+.rstudio-themes-dark .rstheme_minimizedWindowObject .rstheme_center {
+  background-color: #1a1a1a !important; /* Very dark gray */
+  color: #cccccc !important; /* Light gray */
+  border-color: #1a1a1a !important;
+  border-right: 1px solid #0a0a0a !important; /* almost black */
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.rstudio-themes-dark .gwt-TabLayoutPanelTab .gwt-Label {
+  cursor: pointer;
+}
+
+/* Active tab */
+.rstudio-themes-dark .gwt-TabLayoutPanelTab.gwt-TabLayoutPanelTab-selected .rstheme_tabLayoutCenter {
+    background-color: #333333 !important; /* slightly lighter grey for active tab */
+  color: #ffffff !important; /* White text */
+}
+/* Comments */
+.ace_comment {
+  color: #808080; /* Dark gray, typical comment color */
+}
+
+/* Editor */
+#rstudio_shell_widget.ace_editor.ace_scroller,
+#rstudio_source_text_editor.ace_editor :-webkit-any(.ace_gutter, .ace_scroller, .ace_scrollbar-v) {
+  box-shadow: inset 0 6px 6px -6px #222; /* Darker shadow for subtle depth */
+}
+
+/* Datagrid */
+.rstudio-themes-dark .dataGridHeader,
+.rstudio-themes-dark tr[__gwt_header_row] > :-webkit-any(td, th),
+.rstudio-themes-dark .dataTables_info {
+  background-color: #1a1a1a !important; /* Near black background */
+}
+
+/* Data Table */
+.rstudio-themes-dark .dataTable :-webkit-any(th, .first-child) {
+  background-color: #1a1a1a !important; /* Near black background for table headers */
+}
+
+.rstudio-themes-dark .dataTable :-webkit-any(th, td, tr) {
+  border-color: #333 !important; /* Dark gray border color */
+}
+
+.rstudio-themes-dark .dataTable tbody > tr:hover > td {
+  background-color: #222 !important; /* Slightly lighter near-black for hover */
+}
+
+/* Search background */
+.rstudio-themes-dark .gwt-TabLayoutPanelContent > div:nth-last-child(2):nth-child(4) .rstudio-themes-background {
+  background-color: #111 !important; /* Use #111 for toolbar background */
+}
+
+/* Search input */
+.rstudio-themes-dark :-webkit-any(.rstheme_toolbarWrapper, #rstudio_find_replace_bar) .search,
+.rstudio-themes-flat .themedPopupPanel .search {
+  background-color: #1a1a1a !important; /* Near-black for input background */
+  color: #f0f0f0 !important; /* Light gray for input text */
+  border-radius: 0 !important; /* No rounded corners, as specified */
+  border: 1px solid transparent;
+}
+
+.rstudio-themes-dark
+  .gwt-TabLayoutPanelContent
+  > div:nth-last-child(2):nth-child(4)
+  .rstudio-themes-background
+  .search {
+  height: 18px;
+}
+
+.rstudio-themes-dark .search:-webkit-any(:focus, :focus-within) {
+  outline: 1px solid rgba(50, 180, 255, 0.8); /* Neon blue outline for focus */
+  outline-offset: -1px;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  height: calc(17px * 10 / 14) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: rgba(70, 70, 70, 0.4) !important; /* Darker gray for scrollbar thumb*/
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(90, 90, 90, 0.7) !important; /* Slightly lighter on hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(120, 120, 120, 0.4) !important; /*Even lighter for active*/
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+  background-color: transparent !important; /* Keep scrollbar track transparent */
+}
+
+::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 1px 0 0 0 #222; /* Dark separator color */
+}
+
+/* Menus */
+.rstudio-themes-flat .themedPopupPanel,
+.rstudio-themes-flat .popupMiddleCenter,
+.rstudio-themes-flat .menuPopupMiddleCenter {
+  color: #f0f0f0 !important; /* Light gray text for menu items*/
+  background-color: #111 !important; /* Near black background for menus*/
+  border-color: #333 !important; /* Darker border for menus */
+}
+
+.rstudio-themes-flat .themedPopupPanel ::-webkit-scrollbar:vertical {
+  width: 10px !important;
+}
+
+.rstudio-themes-flat .themedPopupPanel ::-webkit-scrollbar-track:vertical {
+  box-shadow: none;
+}
+
+.rstudio-themes-flat .gwt-MenuItem-selected {
+  background-color: #005580 !important; /* Neon blue-ish background for selection */
+}
+
+.rstudio-themes-flat .gwt-MenuItemSeparator > .menuSeparatorInner {
+  border-color: rgba(100, 100, 100, 0.4) !important; /* Slightly darker separator */
+}
+
+/* Terminal */
+.terminal {
+  background-color: #000; /* Pure black for terminal */
+  color: #d0d0d0; /* Light gray for terminal text */
+  font-feature-settings: "liga" 0;
+  position: relative;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.terminal.xterm-cursor-style-block.focus:not(.xterm-cursor-blink-on) .terminal-cursor {
+  background-color: #d0d0d0; /* White cursor */
+  color: #000; /* black cursor text*/
+}
+.terminal.focus.xterm-cursor-style-bar:not(.xterm-cursor-blink-on) .terminal-cursor::before,
+.terminal.focus.xterm-cursor-style-underline:not(.xterm-cursor-blink-on) .terminal-cursor::before {
+  content: "";
+  position: absolute;
+  background-color: #d0d0d0; /* White cursor */
+}
+.terminal:not(.focus) .terminal-cursor {
+  outline: 1px solid #d0d0d0; /* white outline for unfocused cursor*/
+  outline-offset: -1px;
+}
+.terminal .xterm-selection div {
+  position: absolute;
+  background-color: rgba(208, 208, 208, 0.3); /* Semi-transparent white for selection*/
+}
+.terminal .xterm-viewport {
+  background-color: #000; /* Pure black viewport*/
+  overflow-y: scroll;
+}
+.xtermInvertColor {
+  color: #000;
+}
+.xtermInvertBgColor {
+  background-color: #e1e1e1;
+}
+.xtermBold {
+  font-weight: bold;
+}
+.xtermUnderline {
+  text-decoration: underline;
+}
+.xtermBlink {
+  text-decoration: blink;
+}
+.xtermHidden {
+  visibility: hidden;
+}
+.xtermItalic {
+  font-style: italic;
+}
+.xtermStrike {
+  text-decoration: line-through;
+}
+.xtermColor0 {
+  color: #121212 !important; /* dark gray for color 0 */
+}
+.xtermBgColor0 {
+  background-color: #121212;
+}
+.xtermColor1 {
+  color: #ff4d4d !important; /* Bright red */
+}
+.xtermBgColor1 {
+  background-color: #ff4d4d;
+}
+.xtermColor2 {
+  color: #00e676 !important; /* Neon green */
+}
+.xtermBgColor2 {
+  background-color: #00e676;
+}
+.xtermColor3 {
+  color: #ffd14d !important; /* Bright yellow */
+}
+.xtermBgColor3 {
+  background-color: #ffd14d;
+}
+.xtermColor4 {
+  color: #4dabf5 !important; /* Neon blue */
+}
+.xtermBgColor4 {
+  background-color: #4dabf5;
+}
+.xtermColor5 {
+  color: #ff5de3 !important; /* Bright pink */
+}
+.xtermBgColor5 {
+  background-color: #ff5de3;
+}
+.xtermColor6 {
+  color: #00f2f2 !important; /* Bright cyan */
+}
+.xtermBgColor6 {
+  background-color: #00f2f2;
+}
+.xtermColor7 {
+  color: #f0f0f0 !important; /* Light gray */
+}
+.xtermBgColor7 {
+  background-color: #f0f0f0;
+}
+.xtermColor8 {
+  color: #555555 !important; /* Darker gray */
+}
+.xtermBgColor8 {
+  background-color: #555555;
+}
+.xtermColor9 {
+  color: #ff4d4d !important; /* Brighter Red */
+}
+.xtermBgColor9 {
+  background-color: #110000; /* Darker shade of the same red tone  */
+}
+.xtermColor10 {
+  color: #aaff55 !important; /* Brighter Green */
+}
+.xtermBgColor10 {
+  background-color: #001100; /* Darker shade of the same green tone */
+}
+.xtermColor11 {
+  color: #ffff77 !important; /* Brighter Yellow */
+}
+.xtermBgColor11 {
+    background-color: #111100; /* Darker shade of the same yellow tone */
+}
+.xtermColor12 {
+  color: #88bbff !important; /* Brighter Blue */
+}
+.xtermBgColor12 {
+    background-color: #000011; /* Darker shade of the same blue tone */
+}
+.xtermColor13 {
+  color: #cc99dd !important; /* Brighter Purple */
+}
+.xtermBgColor13 {
+    background-color: #110011; /* Darker shade of the same purple tone */
+}
+.xtermColor14 {
+  color: #66ffff !important; /* Brighter Cyan */
+}
+.xtermBgColor14 {
+   background-color: #001111; /* Darker shade of the same cyan tone */
+}
+.xtermColor15 {
+  color: #ffffff !important; /* Pure White */
+}
+.xtermBgColor15 {
+    background-color: #222222; /* Dark grey, not pure black for contrast reasons */
+}
+.xtermColor16 {
+  color: #000000 !important; /* True Black */
+}
+.xtermBgColor16 {
+  background-color: #ffffff; /* White background on black text for this use case to be inverse*/
+}
+.xtermColor17 {
+  color: #3333ff !important; /* Brighter Deep Blue */
+}
+.xtermBgColor17 {
+  background-color: #000033; /* Darker shade of the same deep blue tone */
+}
+.xtermColor18 {
+  color: #3366ff !important; /* Brighter Light Blue */
+}
+.xtermBgColor18 {
+   background-color: #000033; /* Darker shade of the same light blue tone */
+}
+.xtermColor19 {
+  color: #3399ff !important; /* Brighter Sky Blue */
+}
+.xtermBgColor19 {
+  background-color: #000033; /* Darker shade of the same sky blue tone */
+}
+.xtermColor20 {
+  color: #33ccff !important; /* Brighter Azure */
+}
+.xtermBgColor20 {
+  background-color: #000033; /* Darker shade of the same azure tone */
+}
+.xtermColor21 {
+  color: #33ffff !important; /* Brighter Aqua */
+}
+.xtermBgColor21 {
+   background-color: #000033; /* Darker shade of the same aqua tone */
+}
+.xtermColor22 {
+    color: #55ff55 !important; /* Brighter Green */
+}
+.xtermBgColor22 {
+    background-color: #003300; /* Darker shade of the same green tone */
+}
+.xtermColor23 {
+    color: #55ffff !important; /* Brighter Teal */
+}
+.xtermBgColor23 {
+    background-color: #003333; /* Darker shade of the same teal tone */
+}
+.xtermColor24 {
+    color: #5588ff !important; /* Brighter Mid Blue */
+}
+.xtermBgColor24 {
+  background-color: #003333; /* Darker shade of the same mid blue tone */
+}
+.xtermColor25 {
+  color: #55aaff !important; /* Brighter Periwinkle */
+}
+.xtermBgColor25 {
+    background-color: #003333; /* Darker shade of the same periwinkle tone */
+}
+.xtermColor26 {
+  color: #55ccff !important; /* Brighter Sky Blue */
+}
+.xtermBgColor26 {
+    background-color: #003333; /* Darker shade of the same sky blue tone */
+}
+.xtermColor27 {
+  color: #55ffff !important; /* Brighter Cyan */
+}
+.xtermBgColor27 {
+    background-color: #003333; /* Darker shade of the same cyan tone */
+}
+.xtermColor28 {
+    color: #88ff88 !important; /* Brighter Lime Green */
+}
+.xtermBgColor28 {
+  background-color: #003300; /* Darker shade of the same lime green tone */
+}
+.xtermColor29 {
+    color: #88ffaa !important; /* Brighter Mint */
+}
+.xtermBgColor29 {
+  background-color: #003300; /* Darker shade of the same mint tone */
+}
+.xtermColor30 {
+    color: #88ffff !important; /* Brighter Teal */
+}
+.xtermBgColor30 {
+    background-color: #003300; /* Darker shade of the same teal tone */
+}
+.xtermColor31 {
+    color: #88aaff !important; /* Brighter Blue */
+}
+.xtermBgColor31 {
+    background-color: #003300; /* Darker shade of the same blue tone */
+}
+.xtermColor32 {
+    color: #88ccff !important; /* Brighter Ice Blue */
+}
+.xtermBgColor32 {
+  background-color: #003300; /* Darker shade of the same ice blue tone */
+}
+.xtermColor33 {
+    color: #88ffff !important; /* Brighter Cyan */
+}
+.xtermBgColor33 {
+    background-color: #003300; /* Darker shade of the same cyan tone */
+}
+.xtermColor34 {
+    color: #aaffaa !important; /* Brighter Lime Green */
+}
+.xtermBgColor34 {
+    background-color: #003300; /* Darker shade of the same lime green tone */
+}
+.xtermColor35 {
+    color: #aaffcc !important; /* Brighter Seafoam */
+}
+.xtermBgColor35 {
+    background-color: #003300; /* Darker shade of the same seafoam tone */
+}
+.xtermColor36 {
+    color: #aaffff !important; /* Brighter Pale Turquoise */
+}
+.xtermBgColor36 {
+    background-color: #003300; /* Darker shade of the same pale turquoise tone */
+}
+.xtermColor37 {
+    color: #aaeeff !important; /* Brighter Periwinkle */
+}
+.xtermBgColor37 {
+  background-color: #003300; /* Darker shade of the same periwinkle tone */
+}
+.xtermColor38 {
+  color: #aaccee !important; /* Brighter Cornflower Blue */
+}
+.xtermBgColor38 {
+    background-color: #003300; /* Darker shade of the same cornflower blue tone */
+}
+.xtermColor39 {
+  color: #aaffff !important; /* Brighter Cyan */
+}
+.xtermBgColor39 {
+    background-color: #003300; /* Darker shade of the same cyan tone */
+}
+.xtermColor40 {
+  color: #ccffcc !important; /* Brighter Lime Green */
+}
+.xtermBgColor40 {
+    background-color: #003300; /* Darker shade of the same lime green tone */
+}
+.xtermColor41 {
+  color: #ccffaa !important; /* Brighter Light Green */
+}
+.xtermBgColor41 {
+    background-color: #003300; /* Darker shade of the same light green tone */
+}
+.xtermColor42 {
+  color: #ccffff !important; /* Brighter Pale Teal */
+}
+.xtermBgColor42 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor43 {
+  color: #00FFAA !important; /* Neon Green */
+}
+.xtermBgColor43 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor44 {
+  color: #00FFFF !important; /* Neon Cyan */
+}
+.xtermBgColor44 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor45 {
+  color: #00AAFF !important; /* Neon Blue */
+}
+.xtermBgColor45 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor46 {
+  color: #00FF00 !important; /* Bright Green */
+}
+.xtermBgColor46 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor47 {
+  color: #00FF44 !important; /* Bright Green */
+}
+.xtermBgColor47 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor48 {
+  color: #00FF77 !important; /* Bright Green */
+}
+.xtermBgColor48 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor49 {
+  color: #00FF99 !important; /* Bright Green */
+}
+.xtermBgColor49 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor50 {
+  color: #00FFBB !important; /* Bright Green */
+}
+.xtermBgColor50 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor51 {
+  color: #00FFFF !important; /* Bright Cyan */
+}
+.xtermBgColor51 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor52 {
+  color: #FF2222 !important; /* Bright Red */
+}
+.xtermBgColor52 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor53 {
+  color: #FF22FF !important; /* Bright Pink */
+}
+.xtermBgColor53 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor54 {
+  color: #FF22AA !important; /* Bright Magenta*/
+}
+.xtermBgColor54 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor55 {
+  color: #AA22FF !important; /* Purple */
+}
+.xtermBgColor55 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor56 {
+  color: #5522FF !important; /* Darker Purple */
+}
+.xtermBgColor56 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor57 {
+  color: #3322FF !important; /* Darker Purple */
+}
+.xtermBgColor57 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor58 {
+  color: #FFFF44 !important; /* Bright Yellow */
+}
+.xtermBgColor58 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor59 {
+  color: #AAAAAA !important; /* Light Gray */
+}
+.xtermBgColor59 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor60 {
+  color: #AAAAFF !important; /* Light Blue */
+}
+.xtermBgColor60 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor61 {
+  color: #77AAFF !important; /* Light Blue */
+}
+.xtermBgColor61 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor62 {
+    color: #55AAFF !important; /* Light Blue */
+}
+.xtermBgColor62 {
+    background-color: #111111; /* Dark Gray */
+}
+.xtermColor63 {
+  color: #33AAFF !important; /* Light Blue */
+}
+.xtermBgColor63 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor64 {
+    color: #FFAA00 !important; /* Orange */
+}
+.xtermBgColor64 {
+    background-color: #111111; /* Dark Gray */
+}
+.xtermColor65 {
+  color: #FFAA44 !important; /* Orange */
+}
+.xtermBgColor65 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor66 {
+    color: #FFAA88 !important; /* Orange */
+}
+.xtermBgColor66 {
+    background-color: #111111; /* Dark Gray */
+}
+.xtermColor67 {
+  color: #FFAABB !important; /* Orange */
+}
+.xtermBgColor67 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor68 {
+  color: #FFAADD !important; /* Orange */
+}
+.xtermBgColor68 {
+    background-color: #111111; /* Dark Gray */
+}
+.xtermColor69 {
+    color: #FFAAEE !important; /* Orange */
+}
+.xtermBgColor69 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor70 {
+  color: #FFEE00 !important; /* Yellow */
+}
+.xtermBgColor70 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor71 {
+    color: #FFEE44 !important; /* Yellow */
+}
+.xtermBgColor71 {
+  background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor72 {
+    color: #FFEE66 !important; /* Yellow */
+}
+.xtermBgColor72 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor73 {
+    color: #FFEE88 !important; /* Yellow */
+}
+.xtermBgColor73 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor74 {
+  color: #FFEEAA !important; /* Yellow */
+}
+.xtermBgColor74 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor75 {
+  color: #FFEECC !important; /* Yellow */
+}
+.xtermBgColor75 {
+    background-color: #080808; /* Very Dark Gray */
+}
+.xtermColor76 {
+  color: #00FF00 !important; /* Neon Green */
+}
+.xtermBgColor76 {
+  background-color: #111111; /* Dark Gray */
+}
+.xtermColor77 {
+  color: #00FF7F !important; /* Bright Green-Cyan */
+}
+.xtermBgColor77 {
+  background-color: #111111;
+}
+.xtermColor78 {
+  color: #00FFAA !important; /* Medium Cyan */
+}
+.xtermBgColor78 {
+  background-color: #111111;
+}
+.xtermColor79 {
+  color: #00FFFF !important; /* Cyan */
+}
+.xtermBgColor79 {
+  background-color: #111111;
+}
+.xtermColor80 {
+  color: #00AAFF !important; /* Blue */
+}
+.xtermBgColor80 {
+  background-color: #111111;
+}
+.xtermColor81 {
+  color: #0088FF !important; /* Lighter Blue */
+}
+.xtermBgColor81 {
+    background-color: #111111;
+}
+.xtermColor82 {
+  color: #7FFF00 !important;  /* Lime Green */
+}
+.xtermBgColor82 {
+    background-color: #111111;
+}
+.xtermColor83 {
+  color: #99FF00 !important; /*  Bright Yellow-Green */
+}
+.xtermBgColor83 {
+    background-color: #111111;
+}
+.xtermColor84 {
+  color: #A3FF00 !important;  /* Yellow-Green */
+}
+.xtermBgColor84 {
+    background-color: #111111;
+}
+.xtermColor85 {
+  color: #AAFF00 !important;  /* Yellow */
+}
+.xtermBgColor85 {
+    background-color: #111111;
+}
+.xtermColor86 {
+    color: #AAAAFF !important; /* Pale Blue */
+}
+.xtermBgColor86 {
+  background-color: #111111;
+}
+.xtermColor87 {
+  color: #DDDDFF !important; /* light blue */
+}
+.xtermBgColor87 {
+    background-color: #111111;
+}
+.xtermColor88 {
+  color: #FF0000 !important; /* Red */
+}
+.xtermBgColor88 {
+    background-color: #111111;
+}
+.xtermColor89 {
+  color: #FF005F !important; /* Magenta */
+}
+.xtermBgColor89 {
+    background-color: #111111;
+}
+.xtermColor90 {
+  color: #FF0087 !important; /* Light magenta  */
+}
+.xtermBgColor90 {
+  background-color: #111111;
+}
+.xtermColor91 {
+  color: #FF00AF !important; /* pink*/
+}
+.xtermBgColor91 {
+  background-color: #111111;
+}
+.xtermColor92 {
+  color: #FF00D7 !important; /* Dark purple */
+}
+.xtermBgColor92 {
+  background-color: #111111;
+}
+.xtermColor93 {
+  color: #FF00FF !important;  /* Bright Magenta */
+}
+.xtermBgColor93 {
+  background-color: #111111;
+}
+.xtermColor94 {
+  color: #FFAA00 !important;  /* Bright orange */
+}
+.xtermBgColor94 {
+  background-color: #111111;
+}
+.xtermColor95 {
+    color: #FF8800 !important;  /* Orange */
+}
+.xtermBgColor95 {
+  background-color: #111111;
+}
+.xtermColor96 {
+  color: #FFAA44 !important; /* Orange-Brown */
+}
+.xtermBgColor96 {
+  background-color: #111111;
+}
+.xtermColor97 {
+  color: #FF88AA !important; /* Pink */
+}
+.xtermBgColor97 {
+  background-color: #111111;
+}
+.xtermColor98 {
+  color: #AA88FF !important; /* Lighter purple */
+}
+.xtermBgColor98 {
+    background-color: #111111;
+}
+.xtermColor99 {
+  color: #BB00FF !important; /* Purple */
+}
+.xtermBgColor99 {
+  background-color: #111111;
+}
+.xtermColor100 {
+    color: #FFFF00 !important;  /* Yellow */
+}
+.xtermBgColor100 {
+  background-color: #111111;
+}
+.xtermColor101 {
+    color: #CCFF00 !important; /* yellow green*/
+}
+.xtermBgColor101 {
+    background-color: #111111;
+}
+.xtermColor102 {
+  color: #AAAAAA !important;  /* Gray */
+}
+.xtermBgColor102 {
+    background-color: #111111;
+}
+.xtermColor103 {
+  color: #BBBBBB !important;  /* light gray */
+}
+.xtermBgColor103 {
+  background-color: #111111;
+}
+.xtermColor104 {
+    color: #AAAAFF !important;  /*Pale blue*/
+}
+.xtermBgColor104 {
+    background-color: #111111;
+}
+.xtermColor105 {
+    color: #AA00FF !important;  /* dark purple*/
+}
+.xtermBgColor105 {
+  background-color: #111111;
+}
+.xtermColor106 {
+  color: #CCAA00 !important; /* orange */
+}
+.xtermBgColor106 {
+  background-color: #111111;
+}
+.xtermColor107 {
+  color: #CCAA88 !important; /* light brown */
+}
+.xtermBgColor107 {
+    background-color: #111111;
+}
+.xtermColor108 {
+  color: #CCCCAA !important; /* Yellow gray */
+}
+.xtermBgColor108 {
+    background-color: #111111;
+}
+.xtermColor109 {
+  color: #BBBBFF !important; /* Light purple blue */
+}
+.xtermBgColor109 {
+  background-color: #0a0a0a; /* Very dark gray */
+  color: #507b7b !important; /*  a brighter version of the original color as text */
+}
+.xtermColor110 {
+  color: #6090ba !important; /* Bright, slightly desaturated blue accent */
+}
+.xtermBgColor110 {
+  background-color: #050810;  /* Very dark blue */
+}
+.xtermColor111 {
+  color: #70a0ff !important; /* Brighter, more saturated blue */
+}
+.xtermBgColor111 {
+  background-color: #050515; /* Darker version of 110 */
+}
+.xtermColor112 {
+    color: #90ff00 !important; /* Bright neon green */
+}
+.xtermBgColor112 {
+    background-color: #081000; /* Dark, deep green */
+}
+.xtermColor113 {
+    color: #90ffa0 !important; /* Bright, slightly faded green */
+}
+.xtermBgColor113 {
+    background-color: #041002; /* Dark, deep green, slightly more green */
+}
+.xtermColor114 {
+  color: #80e090 !important;  /* Light green with high contrast */
+}
+.xtermBgColor114 {
+    background-color: #030a03; /* Deeper green */
+}
+.xtermColor115 {
+  color: #60d0c0 !important; /*  Bright, a bit more desaturated green */
+}
+.xtermBgColor115 {
+  background-color: #030a08;  /* Dark slightly tinted green */
+}
+.xtermColor116 {
+  color: #70d0d0 !important; /*  Bright cyan */
+}
+.xtermBgColor116 {
+    background-color: #030a0a;  /* Dark cyan */
+}
+.xtermColor117 {
+  color: #90d0ff !important;  /* Bright cyan/blue mix */
+}
+.xtermBgColor117 {
+  background-color: #040410; /*  very Dark cyan/blue */
+}
+.xtermColor118 {
+    color: #b0ff10 !important;  /*  Neon yellow green */
+}
+.xtermBgColor118 {
+  background-color: #080a00; /*   Dark green/yellow */
+}
+.xtermColor119 {
+  color: #b0ff80 !important;    /* Light slightly yellowish green */
+}
+.xtermBgColor119 {
+  background-color: #041000;    /* Dark green yellow */
+}
+.xtermColor120 {
+    color: #80ff70 !important; /* Bright light green  */
+}
+.xtermBgColor120 {
+  background-color: #031003;  /*   Darker green */
+}
+.xtermColor121 {
+  color: #70ff90 !important; /* Bright light green  */
+}
+.xtermBgColor121 {
+  background-color: #020803; /*   Dark green */
+}
+.xtermColor122 {
+    color: #90ffd0 !important; /* Bright light cyan green */
+}
+.xtermBgColor122 {
+    background-color: #02080a;   /* Deep cyan */
+}
+.xtermColor123 {
+    color: #80ffff !important; /* Bright light cyan  */
+}
+.xtermBgColor123 {
+  background-color: #020a0b; /*   Dark cyan */
+}
+.xtermColor124 {
+    color: #ff1010 !important;   /* Bright neon red */
+}
+.xtermBgColor124 {
+  background-color: #100000; /*  Dark Red */
+}
+.xtermColor125 {
+  color: #ff3050 !important;   /* Bright pinkish red */
+}
+.xtermBgColor125 {
+    background-color: #100203; /*   Darker red */
+}
+.xtermColor126 {
+  color: #ff3080 !important;  /* Bright magenta */
+}
+.xtermBgColor126 {
+  background-color: #100005; /*   Darker magenta */
+}
+.xtermColor127 {
+    color: #ff2090 !important; /* Bright magenta/red */
+}
+.xtermBgColor127 {
+    background-color: #10000a; /*   Dark magenta */
+}
+.xtermColor128 {
+    color: #ff30c0 !important; /*  Bright violet magenta */
+}
+.xtermBgColor128 {
+    background-color: #10000a; /*   Dark magenta/violet */
+}
+.xtermColor129 {
+    color: #ff00ff !important; /* Bright purple */
+}
+.xtermBgColor129 {
+  background-color: #100010;   /* Dark Purple */
+}
+.xtermColor130 {
+  color: #ff6000 !important;    /* Bright neon orange */
+}
+.xtermBgColor130 {
+    background-color: #100500; /*  Dark Orange */
+}
+.xtermColor131 {
+    color: #ff4030 !important;  /*  Bright orange/red */
+}
+.xtermBgColor131 {
+  background-color: #100402;    /* Darker orange/red */
+}
+.xtermColor132 {
+    color: #ff5070 !important; /*  Bright light orange/red */
+}
+.xtermBgColor132 {
+    background-color: #100404;  /*  Darker light orange/red */
+}
+.xtermColor133 {
+    color: #ff50a0 !important;    /* Bright pink/orange */
+}
+.xtermBgColor133 {
+  background-color: #100304;    /*  Darker pink/orange */
+}
+.xtermColor134 {
+  color: #ff50c0 !important;  /*  Bright pink/violet */
+}
+.xtermBgColor134 {
+    background-color: #10020a;  /*  Darker pink/violet */
+}
+.xtermColor135 {
+  color: #ff50ff !important;   /*  Bright purple/pink */
+}
+.xtermBgColor135 {
+  background-color: #100210;  /*   Darker purple/pink */
+}
+.xtermColor136 {
+  color: #ffa000 !important;   /* Bright yellowish orange */
+}
+.xtermBgColor136 {
+  background-color: #100a00;   /*  Dark Yellowish Orange */
+}
+.xtermColor137 {
+  color: #ffa030 !important; /* Bright light orange */
+}
+.xtermBgColor137 {
+  background-color: #100a02;   /*   Dark Orange */
+}
+.xtermColor138 {
+    color: #ffa050 !important; /*  Bright  orange */
+}
+.xtermBgColor138 {
+  background-color: #100a03;   /*  Darker orange */
+}
+.xtermColor139 {
+    color: #ff8070 !important;   /* Bright peach */
+}
+.xtermBgColor139 {
+  background-color: #100a04;   /*   Darker peach */
+}
+.xtermColor140 {
+  color: #ff80a0 !important;   /* Bright pinkish  */
+}
+.xtermBgColor140 {
+  background-color: #100a05;   /*  Darker pinkish */
+}
+.xtermColor141 {
+    color: #ffa0f0 !important;   /* Bright purple/pinkish */
+}
+.xtermBgColor141 {
+    background-color: #100a10;    /* Darker purple/pinkish */
+}
+.xtermColor142 {
+    color: #f0ff10 !important;  /*  Bright neon yellow */
+}
+.xtermBgColor142 {
+    background-color: #081000;  /*  Dark  green/yellow */
+}
+/* --- Base Colors, modified for dark theme --- */
+.xtermColor143 {
+  color: #c0c060 !important;  /* Slightly brighter, more yellow */
+}
+.xtermBgColor143 {
+  background-color: #1a1a10;  /* Darker background */
+}
+.xtermColor144 {
+  color: #c0c090 !important;  /* Brighter, more yellow */
+}
+.xtermBgColor144 {
+  background-color: #1a1a15; /* Darker background */
+}
+.xtermColor145 {
+  color: #c0c0c0 !important; /* Light gray */
+}
+.xtermBgColor145 {
+  background-color: #1a1a1a; /* Near black */
+}
+.xtermColor146 {
+  color: #c0c0e0 !important; /* Lighter, more violet */
+}
+.xtermBgColor146 {
+  background-color: #1a1a25; /* Dark background */
+}
+.xtermColor147 {
+  color: #c0c0ff !important; /* Lighter, more blue */
+}
+.xtermBgColor147 {
+  background-color: #1a1a30; /* Dark background */
+}
+.xtermColor148 {
+    color: #c0ff00 !important;  /* Neon green */
+}
+.xtermBgColor148 {
+  background-color: #1a2000;  /* Very dark green */
+}
+.xtermColor149 {
+  color: #c0ff60 !important; /* Neon lime */
+}
+.xtermBgColor149 {
+  background-color: #1a2010; /* Very dark green */
+}
+.xtermColor150 {
+  color: #c0ff90 !important; /* Light yellow/green */
+}
+.xtermBgColor150 {
+  background-color: #1a2015; /* Very dark green */
+}
+.xtermColor151 {
+  color: #c0ffc0 !important;  /* Light pastel green */
+}
+.xtermBgColor151 {
+  background-color: #1a201a;  /* Very dark green */
+}
+.xtermColor152 {
+  color: #c0ffe0 !important; /* Light turquoise */
+}
+.xtermBgColor152 {
+  background-color: #1a2020; /* Dark background */
+}
+.xtermColor153 {
+  color: #c0ffff !important;  /* Light cyan */
+}
+.xtermBgColor153 {
+    background-color: #1a2030; /* Dark background */
+}
+.xtermColor154 {
+    color: #d0ff00 !important;  /* Bright yellow */
+}
+.xtermBgColor154 {
+    background-color: #1a2500;  /* Very dark green */
+}
+.xtermColor155 {
+  color: #d0ff60 !important; /* Bright lime */
+}
+.xtermBgColor155 {
+  background-color: #1a2510; /* Very dark green */
+}
+.xtermColor156 {
+  color: #d0ff90 !important; /* Light yellow/green */
+}
+.xtermBgColor156 {
+  background-color: #1a2515; /* Very dark green */
+}
+.xtermColor157 {
+    color: #d0ffc0 !important; /*  Light green */
+}
+.xtermBgColor157 {
+  background-color: #1a251a;  /* Very dark green */
+}
+.xtermColor158 {
+    color: #d0ffe0 !important; /* Light turquoise */
+}
+.xtermBgColor158 {
+  background-color: #1a2520; /* Dark background */
+}
+.xtermColor159 {
+    color: #d0ffff !important;  /* Bright cyan */
+}
+.xtermBgColor159 {
+  background-color: #1a2530; /* Dark background */
+}
+/* --- Reds, modified for dark theme, aiming for contrast --- */
+.xtermColor160 {
+    color: #ff4040 !important;  /* Neon red */
+}
+.xtermBgColor160 {
+  background-color: #250000; /* Very dark red */
+}
+.xtermColor161 {
+  color: #ff4080 !important;  /* Neon pink */
+}
+.xtermBgColor161 {
+  background-color: #250010; /* Very dark red */
+}
+.xtermColor162 {
+    color: #ff40b0 !important; /* Neon magenta */
+}
+.xtermBgColor162 {
+  background-color: #250015; /* Very dark red */
+}
+.xtermColor163 {
+    color: #ff40d0 !important;  /* Neon violet-red */
+}
+.xtermBgColor163 {
+  background-color: #250020; /* Dark background */
+}
+.xtermColor164 {
+    color: #ff40f0 !important; /* Neon violet */
+}
+.xtermBgColor164 {
+  background-color: #250025; /* Dark background */
+}
+.xtermColor165 {
+  color: #ff40ff !important; /* Bright magenta */
+}
+.xtermBgColor165 {
+  background-color: #250030; /* Dark background */
+}
+.xtermColor166 {
+  color: #ff8040 !important; /* Neon orange-red */
+}
+.xtermBgColor166 {
+  background-color: #251000; /* Very dark red */
+}
+.xtermColor167 {
+  color: #ff8080 !important; /* Coral */
+}
+.xtermBgColor167 {
+  background-color: #251010; /* Very dark red */
+}
+.xtermColor168 {
+    color: #ff80b0 !important; /* Light coral */
+}
+.xtermBgColor168 {
+  background-color: #251015; /* Very dark red */
+}
+.xtermColor169 {
+  color: #ff80d0 !important; /* Light magenta */
+}
+.xtermBgColor169 {
+  background-color: #251020; /* Dark background */
+}
+.xtermColor170 {
+  color: #ff80f0 !important; /* Light violet */
+}
+.xtermBgColor170 {
+  background-color: #251025; /* Dark background */
+}
+.xtermColor171 {
+  color: #ff80ff !important; /* Light magenta */
+}
+.xtermBgColor171 {
+    background-color: #251030; /* Dark background */
+}
+.xtermColor172 {
+    color: #ffc040 !important; /* Bright orange */
+}
+.xtermBgColor172 {
+  background-color: #251500; /* Very dark red */
+}
+.xtermColor173 {
+    color: #ffc080 !important; /* Light orange */
+}
+.xtermBgColor173 {
+  background-color: #251510; /* Very dark red */
+}
+.xtermColor174 {
+    color: #ffc0b0 !important; /* Light pink */
+}
+.xtermBgColor174 {
+  background-color: #251515; /* Very dark red */
+}
+.xtermColor175 {
+    color: #ffc0d0 !important;  /* Pastel pink */
+}
+.xtermBgColor175 {
+    background-color: #251520; /* Dark background */
+}
+.xtermColor176 {
+  color: #ffc0f0 !important; /* Light violet */
+}
+.xtermBgColor176 {
+  background-color: #251525; /* Dark background */
+}
+
+.xtermBgColor176 {
+  background-color: #000000; /* Black Background */
+}
+.xtermColor177 {
+  color: #f071f0 !important;  /* Bright pink */
+}
+.xtermBgColor177 {
+  background-color: #111111; /* Very dark grey */
+}
+.xtermColor178 {
+  color: #ffff00 !important;   /* Neon Yellow */
+}
+.xtermBgColor178 {
+   background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor179 {
+  color: #ffff5f !important; /* Neon Yellow */
+}
+.xtermBgColor179 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor180 {
+  color: #ffff87 !important;  /* Neon Yellow */
+}
+.xtermBgColor180 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor181 {
+  color: #ffffaf !important;   /* Neon Yellow */
+}
+.xtermBgColor181 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor182 {
+  color: #ffffd7 !important;  /* Neon Yellow */
+}
+.xtermBgColor182 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor183 {
+  color: #ffffff !important; /* White */
+}
+.xtermBgColor183 {
+  background-color: #111111; /* Very Dark Grey */
+}
+.xtermColor184 {
+  color: #ffff00 !important;  /* Neon Yellow */
+}
+.xtermBgColor184 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor185 {
+  color: #ffff5f !important;    /* Neon Yellow */
+}
+.xtermBgColor185 {
+    background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor186 {
+  color: #ffff87 !important; /* Neon Yellow */
+}
+.xtermBgColor186 {
+    background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor187 {
+  color: #ffffaf !important;    /* Neon Yellow */
+}
+.xtermBgColor187 {
+    background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor188 {
+  color: #ffffff !important; /* White */
+}
+.xtermBgColor188 {
+  background-color: #111111; /* Very Dark Grey */
+}
+.xtermColor189 {
+  color: #ffffff !important;   /* White */
+}
+.xtermBgColor189 {
+  background-color: #111111; /* Very Dark Grey */
+}
+.xtermColor190 {
+  color: #ffff00 !important;   /* Neon Yellow */
+}
+.xtermBgColor190 {
+    background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor191 {
+  color: #ffff5f !important; /* Neon Yellow */
+}
+.xtermBgColor191 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor192 {
+  color: #ffff87 !important;  /* Neon Yellow */
+}
+.xtermBgColor192 {
+    background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor193 {
+  color: #ffffaf !important;   /* Neon Yellow */
+}
+.xtermBgColor193 {
+  background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor194 {
+  color: #ffffd7 !important; /* Neon Yellow */
+}
+.xtermBgColor194 {
+    background-color: #111100; /* very dark slightly yellowish*/
+}
+.xtermColor195 {
+  color: #ffffff !important; /* White */
+}
+.xtermBgColor195 {
+  background-color: #111111; /* Very Dark Grey */
+}
+.xtermColor196 {
+  color: #ff0000 !important; /* Bright Red */
+}
+.xtermBgColor196 {
+  background-color: #110000; /* Very Dark Red */
+}
+.xtermColor197 {
+  color: #ff005f !important; /* Bright Pinkish-Red */
+}
+.xtermBgColor197 {
+  background-color: #110000; /* Very Dark Red */
+}
+.xtermColor198 {
+  color: #ff0087 !important;  /* Bright Magenta */
+}
+.xtermBgColor198 {
+    background-color: #110000; /* Very Dark Red */
+}
+.xtermColor199 {
+  color: #ff00af !important; /* Bright Magenta */
+}
+.xtermBgColor199 {
+    background-color: #110000; /* Very Dark Red */
+}
+.xtermColor200 {
+  color: #ff00d7 !important;  /* Bright Magenta */
+}
+.xtermBgColor200 {
+    background-color: #110000; /* Very Dark Red */
+}
+.xtermColor201 {
+  color: #ff00ff !important;  /* Bright Magenta */
+}
+.xtermBgColor201 {
+  background-color: #110011; /* Very Dark purple */
+}
+.xtermColor202 {
+  color: #ff5f00 !important; /* Bright Orange */
+}
+.xtermBgColor202 {
+  background-color: #110000; /* Very Dark Red */
+}
+.xtermColor203 {
+  color: #ff5f5f !important; /* Orange-Red */
+}
+.xtermBgColor203 {
+ background-color: #110000; /* Very Dark Red */
+}
+.xtermColor204 {
+  color: #ff5f87 !important; /* Orange-Pink */
+}
+.xtermBgColor204 {
+ background-color: #110000; /* Very Dark Red */
+}
+.xtermColor205 {
+  color: #ff5faf !important;  /* Light Pink*/
+}
+.xtermBgColor205 {
+  background-color: #110000; /* Very Dark Red */
+}
+.xtermColor206 {
+  color: #ff5fd7 !important; /* Light Pink*/
+}
+.xtermBgColor206 {
+  background-color: #110011; /* Very Dark purple */
+}
+.xtermColor207 {
+  color: #ff5fff !important; /* Light Pink */
+}
+.xtermBgColor207 {
+  background-color: #110011; /* Very Dark purple */
+}
+.xtermColor208 {
+  color: #ff8700 !important; /* Neon Orange */
+}
+.xtermBgColor208 {
+ background-color: #110000; /* Very Dark Red */
+}
+.xtermColor209 {
+  color: #ff875f !important;  /* Neon Orange */
+}
+.xtermBgColor209 {
+  background-color: #110000; /* Very Dark Red */
+}
+
+.xtermColor210 {
+  color: #ff4d4d !important; /* Brighter Red */
+}
+.xtermBgColor210 {
+  background-color: #111111;
+}
+.xtermColor211 {
+  color: #ff4da6 !important; /* Brighter Pink */
+}
+.xtermBgColor211 {
+  background-color: #111111;
+}
+.xtermColor212 {
+  color: #ff4dd7 !important;  /* Brighter Magenta */
+}
+.xtermBgColor212 {
+  background-color: #111111;
+}
+.xtermColor213 {
+  color: #ff4dff !important; /* Brighter Violet */
+}
+.xtermBgColor213 {
+  background-color: #111111;
+}
+.xtermColor214 {
+  color: #ffd700 !important; /* Yellow/Gold */
+}
+.xtermBgColor214 {
+   background-color: #111111;
+}
+.xtermColor215 {
+  color: #ffc633 !important; /* Saturated Orange */
+}
+.xtermBgColor215 {
+  background-color: #111111;
+}
+.xtermColor216 {
+  color: #ff994d !important; /* Brighter Orange*/
+}
+.xtermBgColor216 {
+  background-color: #111111;
+}
+.xtermColor217 {
+  color: #ff7070 !important; /* Brighter Pink */
+}
+.xtermBgColor217 {
+  background-color: #111111;
+}
+.xtermColor218 {
+  color: #ff70c0 !important; /* Brighter Magenta */
+}
+.xtermBgColor218 {
+   background-color: #111111;
+}
+.xtermColor219 {
+  color: #ff70ff !important; /* Brighter Violet */
+}
+.xtermBgColor219 {
+  background-color: #111111;
+}
+.xtermColor220 {
+  color: #ffff00 !important; /* Bright Yellow */
+}
+.xtermBgColor220 {
+  background-color: #111111;
+}
+.xtermColor221 {
+  color: #ffee4d !important;  /* Bright Yellow-Orange */
+}
+.xtermBgColor221 {
+ background-color: #111111;
+}
+.xtermColor222 {
+  color: #ffdd4d !important; /*  Bright Gold */
+}
+.xtermBgColor222 {
+  background-color: #111111;
+}
+.xtermColor223 {
+    color: #ffbb5d !important;
+}
+.xtermBgColor223 {
+  background-color: #111111;
+}
+.xtermColor224 {
+  color: #ffcce0 !important; /* Light Pink */
+}
+.xtermBgColor224 {
+  background-color: #111111;
+}
+.xtermColor225 {
+  color: #ffc0ff !important;
+}
+.xtermBgColor225 {
+  background-color: #111111;
+}
+.xtermColor226 {
+  color: #ffff80 !important; /* Neon Yellow */
+}
+.xtermBgColor226 {
+  background-color: #111111;
+}
+.xtermColor227 {
+  color: #ffff90 !important;  /* Lighter Neon Yellow */
+}
+.xtermBgColor227 {
+ background-color: #111111;
+}
+.xtermColor228 {
+  color: #ffffa0 !important;  /* Light Neon Yellow */
+}
+.xtermBgColor228 {
+  background-color: #111111;
+}
+.xtermColor229 {
+  color: #ffffb0 !important;
+}
+.xtermBgColor229 {
+  background-color: #111111;
+}
+.xtermColor230 {
+    color: #fff9e8 !important;  /* Almost White Yellowish */
+}
+.xtermBgColor230 {
+    background-color: #111111;
+}
+.xtermColor231 {
+  color: #ffffff !important;
+}
+.xtermBgColor231 {
+  background-color: #111111;
+}
+.xtermColor232 {
+    color: #666666 !important; /* slightly lighter to see on pure black */
+}
+.xtermBgColor232 {
+  background-color: #000000; /* Pure Black */
+}
+.xtermColor233 {
+  color: #777777 !important; /* slightly lighter */
+}
+.xtermBgColor233 {
+  background-color: #080808; /* Slightly lighter than pure black */
+}
+.xtermColor234 {
+  color: #888888 !important; /*  slightly lighter */
+}
+.xtermBgColor234 {
+  background-color: #111111;
+}
+.xtermColor235 {
+  color: #999999 !important; /*  slightly lighter */
+}
+.xtermBgColor235 {
+   background-color: #111111;
+}
+.xtermColor236 {
+    color: #AAAAAA !important; /* slightly lighter */
+}
+.xtermBgColor236 {
+  background-color: #111111;
+}
+.xtermColor237 {
+    color: #BBBBBB !important; /* slightly lighter */
+}
+.xtermBgColor237 {
+  background-color: #111111;
+}
+.xtermColor238 {
+    color: #CCCCCC !important; /*  slightly lighter */
+}
+.xtermBgColor238 {
+ background-color: #111111;
+}
+.xtermColor239 {
+    color: #DDDDDD !important; /*  slightly lighter */
+}
+.xtermBgColor239 {
+  background-color: #111111;
+}
+.xtermColor240 {
+  color: #EEEEEE !important; /*  slightly lighter */
+}
+.xtermBgColor240 {
+  background-color: #111111;
+}
+.xtermColor241 {
+  color: #FAFAFA !important; /* almost white */
+}
+.xtermBgColor241 {
+  background-color: #111111;
+}
+.xtermColor242 {
+  color: #E1E1E1 !important;
+}
+.xtermBgColor242 {
+    background-color: #111111;
+}
+.xtermColor243 {
+  color: #D2D2D2 !important;
+}
+.xtermBgColor243 {
+    background-color: #111111;
+}
+.xtermColor244 {
+  color: #C3C3C3 !important;
+}
+.xtermBgColor244 {
+    background-color: #111111;
+}
+.xtermColor245 {
+  color: #B4B4B4 !important;
+}
+.xtermBgColor245 {
+    background-color: #111111;
+}
+.xtermColor246 {
+    color: #A5A5A5 !important;
+}
+.xtermBgColor246 {
+  background-color: #111111;
+}
+.xtermColor247 {
+    color: #969696 !important;
+}
+.xtermBgColor247 {
+    background-color: #111111;
+}
+.xtermColor248 {
+    color: #878787 !important;
+}
+.xtermBgColor248 {
+   background-color: #111111;
+}
+.xtermColor249 {
+   color: #787878 !important;
+}
+.xtermBgColor249 {
+    background-color: #111111;
+}
+.xtermColor250 {
+    color: #696969 !important;
+}
+.xtermBgColor250 {
+  background-color: #111111;
+}
+.xtermColor251 {
+  color: #5A5A5A !important;
+}
+.xtermBgColor251 {
+    background-color: #111111;
+}
+.xtermColor252 {
+    color: #4B4B4B !important;
+}
+.xtermBgColor252 {
+  background-color: #111111;
+}
+.xtermColor253 {
+    color: #3C3C3C !important;
+}
+.xtermBgColor253 {
+    background-color: #111111;
+}
+.xtermColor254 {
+    color: #2D2D2D !important;
+}
+.xtermBgColor254 {
+  background-color: #111111;
+}
+.xtermColor255 {
+  color: #1E1E1E !important;
+}
+.xtermBgColor255 {
+  background-color: #111111;
+}
