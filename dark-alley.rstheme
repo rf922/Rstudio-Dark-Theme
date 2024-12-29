@@ -2133,24 +2133,31 @@
 }
 
 
-/* Overall dialog background */
+/* --- Dialog Background ---- */
 .gwt-DialogBox {
-    background-color: #000000; 
-    border: 1px solid #222; 
+    background-color: #000000; /* Pure black */
+    border: 1px solid #222; /* Dark border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Dialog title bar */
 .dialogTopCenterInner {
-    background-color: #111; 
+    background-color: #111; /* Darker than pure black */
 }
 
 .dialogTopCenter .Caption {
-    color: #ddd; 
+    color: #ddd; /* Very light gray for title text */
     font-weight: bold;
+	padding: 5px;
 }
 
+/* remove the white line below the title */
+.dialogTopCenter {
+    background-color: #111;
+}
 
-/* Tab list */
+/* --- Tab list ---- */
+
 .GNTYACMBEL {
     background-color: #000000;
     border-right: 1px solid #222;
@@ -2158,16 +2165,16 @@
 
 /* Unselected tabs */
 .GNTYACMBDL {
-    background-color: #111; /* Dark background for unselected tabs */
-    color: #888; /* muted color for unselected tab text */
-    border-bottom: 1px solid #222; 
+    background-color: #111;
+    color: #888;
+    border-bottom: 1px solid #222;
 }
 
 /* Selected tab */
 .GNTYACMBDL.__rstudio_modal_first_focus,
 .GNTYACMBDL.GNTYACMBHK {
-    background-color: #333; /* Slightly brighter for selected tab*/
-    color: #fff; /* White text for the selected tab */
+    background-color: #333;
+    color: #fff;
     border-bottom: 1px solid #444;
 
 }
@@ -2175,20 +2182,20 @@
 /* Tab hover and focus */
 .GNTYACMBDL:hover,
 .GNTYACMBDL:focus {
-    background-color: #333; /* Same as selected hover */
+    background-color: #333;
     color: #fff;
 }
 
 /* Tab label text */
 .GNTYACMBBL {
-    color: inherit; /* Inherit tab color*/
+    color: inherit;
     white-space: nowrap;
 }
 
 /* Main dialog content area */
 .dialogMiddleCenterInner {
-    background-color: #000000; 
-    color: #eee; 
+    background-color: #000000;
+    color: #eee;
 }
 
 /* Group labels (e.g., "R Sessions", "Workspace")*/
@@ -2216,14 +2223,14 @@
 /* Button - General Style */
 .gwt-Button {
     background-color: #222;
-    color: #fff; 
+    color: #fff;
     border: 1px solid #333;
 }
 
 
-
+/* Button: Fix White text on buttons - Specific Target */
 .gwt-Button .GNTYACMBC2 {
-   color: black; 
+    color: black;
 }
 
 
@@ -2268,6 +2275,27 @@
     color:#fff;
 }
 
+/* Unselected list options */
+.GNTYACMBN2.GNTYACMBIR {
+    background-color: black; /* Dark background for unselected options*/
+    color: #888; /* muted color for unselected option text */
+}
+
+
+/* Selected list options */
+.GNTYACMBN2[aria-selected="true"] {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* Hover for list options */
+.GNTYACMBN2:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+
 /* Hyperlink */
 .rstudio-HyperlinkLabel,
 .rstudio-HyperlinkLabel:link,
@@ -2298,10 +2326,9 @@
 }
 
 .GNTYACMBB3 > div {
-   position: relative;
-   zoom: 1;
+  position: relative;
+  zoom: 1;
 }
-
 
 .GNTYACMBP2 {
     width: 100%;
@@ -2331,17 +2358,210 @@
     color: #fff;
 }
 
-
 /* Image within option (if needed) */
 .GNTYACMBN2 .gwt-Image {
     vertical-align: middle;
     margin-right: 5px;
     margin-bottom: 2px;
 }
-
-
 /* Label within option*/
 .GNTYACMBN2 .gwt-InlineLabel {
     color: inherit; /* Inherit tab color*/
     white-space: nowrap;
+}
+
+
+
+
+/* --- STYLING FOR AUTOCOMPLETE POPUP ---- */
+
+
+.gwt-PopupPanel {
+    z-index: 10000; 
+    max-width: 400px; 
+    visibility: visible; 
+    overflow: visible; 
+    position: absolute; 
+    left: 70px;  
+    top: 21px; 
+    color: #111; 
+}
+
+.gwt-PopupPanel .popupContent {
+    color: #111;  /* Very light gray for main text */
+
+}
+/* Restyling the content inside the popup panel */
+.gwt-PopupPanel .gwt-Label {
+  color: #eee; /* Ensure the labels inside the popup are visible */
+    color: #111;  /* Very light gray for main text */
+
+}
+
+/* Overall dialog box */
+.gwt-DialogBox {
+    border: 1px solid #222;  /* Dark border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);  /* Subtle shadow for depth */
+}
+
+/* Dialog title bar */
+.dialogTopCenterInner {
+    background-color: black; /* Darker than pure black */
+}
+
+.gwt-DialogBox .dialogTopCenter {
+    background-color: black; /* Pure black */
+    
+}
+
+.dialogTopCenter .Caption {
+    color: #ddd; /* Very light gray for title text */
+    font-weight: bold;
+    padding: 5px; /*Added some padding*/
+}
+
+/* remove the white line below the title */
+.dialogTopCenter {
+    background-color: #111;
+}
+/* Main dialog content area */
+.dialogMiddleCenterInner {
+    background-color: #000000; /* Pure black */
+    color: #eee; /* Very light gray for main text */
+}
+
+
+.GNTYACMBFJ .GNTYACMBEJ{
+    padding-right: 5px; /* Add some space between the label and input */
+    color: #eee;
+}
+.GNTYACMBFJ .GNTYACMBDJ {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #333;
+    flex: 1; /* Allow input to take up available space */
+}
+/* Directory button ( ... ) */
+.GNTYACMBKI {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 5px;
+}
+.GNTYACMBKI:hover {
+    background-color: #333;
+}
+/* Breadcrumb */
+.breadcrumb {
+    background-color: #222; /* Match text box background*/
+    border: 1px solid #333; /* Match text box border */
+}
+.breadcrumb .GNTYACMBHJ {
+        padding: 5px;
+}
+
+.breadcrumb .GNTYACMBHJ:hover {
+        background-color: #333; /* Match text box hover */
+}
+
+/* Fix white text on buttons */
+.gwt-Button .GNTYACMBC2 {
+    color: black; /* Sets the text color within the button divs (where the text is actually rendered) */
+}
+/* Button - General Style */
+.gwt-Button {
+    background-color: #222;
+    color: #fff; /* Set the base text color of buttons*/
+    border: 1px solid #333;
+}
+.gwt-Button:hover {
+    background-color: #333;
+}
+/* Status and alert area */
+.GNTYACMBFW > div[role="status"]{
+    color: #888;
+    padding: 5px;
+}
+.GNTYACMBFW > div[role="alert"]{
+  color: red; /* Set the color of the alert */
+    padding: 5px;
+}
+ /* loading bar container */
+ .GNTYACMBM1 {
+    background: #111; /* match the title bar */
+}
+ /* progress bar */
+.GNTYACMBL1 {
+    background-color: #555; /* match the progress bar color */
+}
+.border {
+    background: transparent;
+}
+/* Styles for the entire tbody */
+tbody {
+  width: 100%;
+  height: 100%;
+  color: #eee; /* Very light gray for main text */
+}
+/* Style for each row (directory item) */
+tbody tr[role="option"] {
+    background-color: #111; /* Dark background for unselected items */
+    border-bottom: 1px solid #222; /* Darker bottom border */
+    cursor: pointer;
+}
+/* Hover effect for rows */
+tbody tr[role="option"]:hover {
+    background-color: #333; /* Brighter on hover */
+}
+/* Selected row */
+tbody tr[role="option"].gwt-MenuItem-selected,
+tbody tr[role="option"][aria-selected="true"] {
+    background-color: #333; /* Slightly brighter for selected tab*/
+    color: #fff; /* White text for the selected tab */
+    border-bottom: 1px solid #444;
+}
+/* Style for image container within a table cell*/
+.GNTYACMBNI {
+  padding: 5px 5px 5px 5px; /* Add padding to give more space around the icons */
+    text-align: center; /* Center icons horizontally*/
+    width: 20px;
+}
+.GNTYACMBOI, .GNTYACMBPI, .GNTYACMBMI {
+    padding: 5px;
+}
+
+.GNTYACMBOI {
+    white-space: nowrap; 
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+}
+/* Style for the text content in the row (Size) */
+.GNTYACMBPI {
+        white-space: nowrap; /* Prevent text from wrapping */
+}
+/* Style for the text content in the row (Last modified) */
+.GNTYACMBMI {
+        white-space: nowrap; /* Prevent text from wrapping */
+}
+/* Image */
+.gwt-Image {
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+
+/* Specific styling for the warning bar text */
+.GNTYACMBH4,  /* Targets the main text span */
+.GNTYACMBFW, /* Targets the alert div */
+.GNTYACMBFW > div[role="alert"] /* Targets the text within the alert div specifically */
+ {
+    color: #000 !important; /* Force text to be black */
+    background-color: #eee; /* Force text to be visible */
+}
+
+
+/* forces the "Dismiss Warning Bar" to be black */
+.GNTYACMBE4 .gwt-Button.rstudio-ImageButton .GNTYACMBFW{
+    color:#000 !important; 
+     background-color: #eee; 
 }
