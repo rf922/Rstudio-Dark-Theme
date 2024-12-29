@@ -687,7 +687,7 @@
   color: #000000 !important; /* True Black */
 }
 .xtermBgColor16 {
-  background-color: #ffffff; /* White background on black text for this use case to be inverse*/
+  background-color: #ffffff; 
 }
 .xtermColor17 {
   color: #3333ff !important; /* Brighter Deep Blue */
@@ -1246,7 +1246,7 @@
 }
 .xtermBgColor109 {
   background-color: #0a0a0a; /* Very dark gray */
-  color: #507b7b !important; /*  a brighter version of the original color as text */
+  color: #507b7b !important; 
 }
 .xtermColor110 {
   color: #6090ba !important; /* Bright, slightly desaturated blue accent */
@@ -2516,13 +2516,13 @@ tbody tr[role="option"]:hover {
 /* Selected row */
 tbody tr[role="option"].gwt-MenuItem-selected,
 tbody tr[role="option"][aria-selected="true"] {
-    background-color: #333; /* Slightly brighter for selected tab*/
-    color: #fff; /* White text for the selected tab */
+    background-color: #333; 
+    color: #fff; 
     border-bottom: 1px solid #444;
 }
 /* Style for image container within a table cell*/
 .GNTYACMBNI {
-  padding: 5px 5px 5px 5px; /* Add padding to give more space around the icons */
+  padding: 5px 5px 5px 5px; 
     text-align: center; /* Center icons horizontally*/
     width: 20px;
 }
@@ -2553,15 +2553,43 @@ tbody tr[role="option"][aria-selected="true"] {
 /* Specific styling for the warning bar text */
 .GNTYACMBH4,  /* Targets the main text span */
 .GNTYACMBFW, /* Targets the alert div */
-.GNTYACMBFW > div[role="alert"] /* Targets the text within the alert div specifically */
+.GNTYACMBFW > div[role="alert"] /
  {
-    color: #000 !important; /* Force text to be black */
-    background-color: #eee; /* Force text to be visible */
+    color: #000 !important; 
+    background-color: #eee;
 }
 
 
-/* forces the "Dismiss Warning Bar" to be black */
+
 .GNTYACMBE4 .gwt-Button.rstudio-ImageButton .GNTYACMBFW{
     color:#000 !important; 
      background-color: #eee; 
+}
+
+
+
+.GNTYACMBEUB td.GNTYACMBEUB {
+        background-color: black;
+    vertical-align: top;
+    padding: 0;
+    border: 0.5px solid #555;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+
+.GNTYACMBN3 {
+  background: black !important;
+}
+
+.GNTYACMBM3 {
+  background: black !important;
+}
+.GNTYACMBP3 {
+  background: black !important;
+}
+
+GNTYACMBK3 {
+  background: black !important;    
 }
