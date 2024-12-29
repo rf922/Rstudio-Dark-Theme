@@ -2131,3 +2131,217 @@
 .xtermBgColor255 {
   background-color: #111111;
 }
+
+
+/* Overall dialog background */
+.gwt-DialogBox {
+    background-color: #000000; 
+    border: 1px solid #222; 
+}
+
+/* Dialog title bar */
+.dialogTopCenterInner {
+    background-color: #111; 
+}
+
+.dialogTopCenter .Caption {
+    color: #ddd; 
+    font-weight: bold;
+}
+
+
+/* Tab list */
+.GNTYACMBEL {
+    background-color: #000000;
+    border-right: 1px solid #222;
+}
+
+/* Unselected tabs */
+.GNTYACMBDL {
+    background-color: #111; /* Dark background for unselected tabs */
+    color: #888; /* muted color for unselected tab text */
+    border-bottom: 1px solid #222; 
+}
+
+/* Selected tab */
+.GNTYACMBDL.__rstudio_modal_first_focus,
+.GNTYACMBDL.GNTYACMBHK {
+    background-color: #333; /* Slightly brighter for selected tab*/
+    color: #fff; /* White text for the selected tab */
+    border-bottom: 1px solid #444;
+
+}
+
+/* Tab hover and focus */
+.GNTYACMBDL:hover,
+.GNTYACMBDL:focus {
+    background-color: #333; /* Same as selected hover */
+    color: #fff;
+}
+
+/* Tab label text */
+.GNTYACMBBL {
+    color: inherit; /* Inherit tab color*/
+    white-space: nowrap;
+}
+
+/* Main dialog content area */
+.dialogMiddleCenterInner {
+    background-color: #000000; 
+    color: #eee; 
+}
+
+/* Group labels (e.g., "R Sessions", "Workspace")*/
+.gwt-Label.GNTYACMBKK.GNTYACMBAL {
+    color: #aaa;
+    font-weight: bold;
+}
+
+/* Individual setting label */
+.gwt-Label {
+    color: #eee;
+}
+
+/* Text Input Boxes*/
+.gwt-TextBox {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.gwt-TextBox-readonly {
+    color: #888;
+}
+
+/* Button - General Style */
+.gwt-Button {
+    background-color: #222;
+    color: #fff; 
+    border: 1px solid #333;
+}
+
+
+
+.gwt-Button .GNTYACMBC2 {
+   color: black; 
+}
+
+
+.gwt-Button:hover {
+    background-color: #333;
+}
+
+/* Checkboxes and labels */
+.gwt-CheckBox label {
+    color: #ccc;
+}
+
+/* Dropdowns (ListBox)*/
+.gwt-ListBox {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+/* Selected Dropdown Items */
+.gwt-ListBox option:checked {
+    background-color: #2e86c1;
+}
+
+/*Tab Panel */
+.gwt-TabLayoutPanel {
+    background-color: #000;
+}
+
+/* Tab panel labels */
+.gwt-TabLayoutPanel .gwt-Label {
+    color: #bbb;
+}
+
+.gwt-TabLayoutPanelTabs .gwt-TabLayoutPanelTab {
+    border-bottom: 1px solid #222;
+    background-color: #111;
+}
+
+.gwt-TabLayoutPanelTabs .gwt-TabLayoutPanelTab-selected {
+    background-color: #333;
+    color:#fff;
+}
+
+/* Hyperlink */
+.rstudio-HyperlinkLabel,
+.rstudio-HyperlinkLabel:link,
+.rstudio-HyperlinkLabel:visited {
+    color: #71b1e8; /* Soft blue */
+    text-decoration: none;
+}
+
+.rstudio-HyperlinkLabel:hover,
+.rstudio-HyperlinkLabel:active {
+    color: #9fd5ff; /* Lighter blue on hover */
+    text-decoration: underline;
+}
+
+/* Help button */
+.rstudio-HelpButton {
+    background-color: transparent;
+}
+
+/* --- List options similar to a tab bar ---- */
+
+/* Container of all list options */
+.GNTYACMBB3 {
+    background-color: #000000; /* Match dialog background */
+    overflow: auto;
+    position: relative;
+    zoom: 1;
+}
+
+.GNTYACMBB3 > div {
+   position: relative;
+   zoom: 1;
+}
+
+
+.GNTYACMBP2 {
+    width: 100%;
+}
+
+
+/* Each option container */
+.GNTYACMBN2 {
+    background-color: #111; /* Dark background for unselected tabs */
+    color: #888; /* muted color for unselected tab text */
+    border-bottom: 1px solid #222; /* Darker bottom border */
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* Selected option */
+.GNTYACMBN2.GNTYACMBIR {
+    background-color: #333; /* Slightly brighter for selected tab*/
+    color: #fff; /* White text for the selected tab */
+    border-bottom: 1px solid #444;
+}
+
+/* Hover effect (same as selected) */
+.GNTYACMBN2:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Image within option (if needed) */
+.GNTYACMBN2 .gwt-Image {
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+
+/* Label within option*/
+.GNTYACMBN2 .gwt-InlineLabel {
+    color: inherit; /* Inherit tab color*/
+    white-space: nowrap;
+}
