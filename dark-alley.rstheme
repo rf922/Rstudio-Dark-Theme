@@ -685,7 +685,7 @@
   color: #000000 !important; /* True Black */
 }
 .xtermBgColor16 {
-  background-color: #ffffff; /* White background on black text for this use case to be inverse*/
+  background-color: #ffffff; 
 }
 .xtermColor17 {
   color: #3333ff !important; /* Brighter Deep Blue */
@@ -1244,7 +1244,7 @@
 }
 .xtermBgColor109 {
   background-color: #0a0a0a; /* Very dark gray */
-  color: #507b7b !important; /*  a brighter version of the original color as text */
+  color: #507b7b !important; 
 }
 .xtermColor110 {
   color: #6090ba !important; /* Bright, slightly desaturated blue accent */
