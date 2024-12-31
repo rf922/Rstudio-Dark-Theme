@@ -20,8 +20,8 @@
   --regex: #ff69b4;  /* Hot Pink */
   --keyword: #dda0dd;   /* Plum/Thistle */
   --function-declaration: #6495ed; /* Cornflower Blue */
-  --variable: #ffffff;    /* Pure white, stands out well */
-  --comment: #555555;   /* Darker, low contrast */
+  --variable: #ffffff;    
+  --comment: #555555;   
   --operator: #ee82ee;   /* Violet */
 
   /* markdown */
@@ -280,7 +280,6 @@
   color: #00FFFF !important; /* Light cyan */
 }
 
-/* z-index layers (no changes needed) */
 .ace_layer {
   z-index: 3;
 }
@@ -306,7 +305,6 @@
   border: none;
 }
 
-/* Positioning adjustments - No changes needed */
 .rstudio-themes-flat > .rstudio-themes-dark div:last-child[style*="top: 29px"] {
   top: 24px !important;
   right: 0 !important;
@@ -687,7 +685,7 @@
   color: #000000 !important; /* True Black */
 }
 .xtermBgColor16 {
-  background-color: #ffffff; 
+  background-color: #ffffff; /* White background on black text for this use case to be inverse*/
 }
 .xtermColor17 {
   color: #3333ff !important; /* Brighter Deep Blue */
@@ -1246,7 +1244,7 @@
 }
 .xtermBgColor109 {
   background-color: #0a0a0a; /* Very dark gray */
-  color: #507b7b !important; 
+  color: #507b7b !important; /*  a brighter version of the original color as text */
 }
 .xtermColor110 {
   color: #6090ba !important; /* Bright, slightly desaturated blue accent */
@@ -2131,7 +2129,6 @@
 .xtermBgColor255 {
   background-color: #111111;
 }
-
 
 /* --- Dialog Background ---- */
 .gwt-DialogBox {
