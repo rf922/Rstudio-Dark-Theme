@@ -27,4 +27,4 @@ This is a custom dark theme for Rstudio. Uses black backgrounds, dark colors, an
 
 ![image](https://github.com/user-attachments/assets/2c583460-68ad-4d77-b625-d0f4ff1bc47b)
 
-![image](https://github.com/user-attachments/assets/ae692432-1b53-40e3-bf38-56fbf5ae8d7a)
+![image](https://github.com/user-attachments/assets/75e0b64b-739c-43c1-a8b4-935b091e7432)
